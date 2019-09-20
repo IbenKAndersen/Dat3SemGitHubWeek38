@@ -30,50 +30,73 @@ public class Facade {
     private EntityManager getEntityManager() {
         return emf.createEntityManager();
     }
-    
+
     //Exercise C1
     public List<Student> findAllStudents() {
-        return null;
+        EntityManager em = getEntityManager();
+        try {
+            em.getTransaction().begin();
+            List<Student> students = em.createNamedQuery("Student.findAll").getResultList();
+            em.getTransaction().commit();
+            return students;
+        } finally {
+            em.close();
+        }
     }
-    
+
     //Exercise C2
-    public List<Student> findAllStudentsNamedAnders() {
-        return null;
-    }
-    
-    //Exercise C3
-    public Student newStudent() {
-        return null;
-    }
-    
-    //Exercise C4
-    public void assignStudent() {
+    public void findAllStudentsNamedAnders() {
         
     }
-    
+
+    //Exercise C3
+    public Student newStudent(Student student) {
+        if (student != null) {
+            EntityManager em = getEntityManager();
+            try {
+                em.getTransaction().begin();
+                em.persist(student);
+                em.getTransaction().commit();
+                return student;
+            } catch (Exception e) {
+                em.getTransaction().rollback();
+                throw new IllegalArgumentException("Something went wrong when persisting Student: " + e.getMessage());
+            } finally {
+                em.close();
+            }
+        } else {
+            throw new IllegalArgumentException("Wrong input. Try again.");
+        }
+    }
+
+    //Exercise C4
+    public void assignStudent() {
+
+    }
+
     //Exercise C6
     public List<Student> findAllStudentsWithLastNameAnd() {
-        return null; 
+        return null;
     }
-    
+
     //Exercise C7
     public int countAllStudents() {
         return 0;
     }
-    
+
     //Exercise C8
     public int countStudentsInSemester(String semester) {
         return 0;
     }
-    
+
     //Exercise C9
     public void countStudentsInEachSemester() {
-        
+
     }
-    
+
     //Exercise C10
     public List<Teacher> teachersWhoTeachMost() {
         return null;
     }
-    
+
 }
