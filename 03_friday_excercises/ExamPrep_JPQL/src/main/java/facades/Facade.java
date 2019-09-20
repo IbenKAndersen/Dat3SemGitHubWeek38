@@ -45,8 +45,14 @@ public class Facade {
     }
 
     //Exercise C2
-    public void findAllStudentsNamedAnders() {
-        
+    public List<Student> findAllStudentsNamedAnders() {
+        EntityManager em = emf.createEntityManager();
+        try {
+            List<Student> Anders = em.createQuery("SELECT s FROM Student s WHERE s.firstname = 'Anders'").getResultList();
+            return Anders;
+        } finally {
+            em.close();
+        }
     }
 
     //Exercise C3
@@ -76,17 +82,35 @@ public class Facade {
 
     //Exercise C6
     public List<Student> findAllStudentsWithLastNameAnd() {
-        return null;
+        EntityManager em = emf.createEntityManager();
+        try {
+            List<Student> studentsWithAnd = em.createQuery("SELECT s FROM Student s WHERE s.lastname LIKE 'And%'").getResultList();
+            return studentsWithAnd;
+        } finally {
+            em.close();
+        }
     }
 
     //Exercise C7
     public int countAllStudents() {
-        return 0;
+        EntityManager em = emf.createEntityManager();
+        try {
+            long count = (int) em.createQuery("SELECT COUNT(s) FROM Student s").getSingleResult();
+            return (int) count;
+        } finally {
+            em.close();
+        }
     }
 
     //Exercise C8
-    public int countStudentsInSemester(String semester) {
-        return 0;
+    public int countStudentsInSemester(String name) {
+        EntityManager em = emf.createEntityManager();
+        try {
+            long count = (int) em.createQuery("SELECT COUNT(s) FROM Student s WHERE s.semester = :name").setParameter("name", name).getSingleResult();
+            return (int) count;
+        } finally {
+            em.close();
+        }
     }
 
     //Exercise C9
@@ -95,8 +119,8 @@ public class Facade {
     }
 
     //Exercise C10
-    public List<Teacher> teachersWhoTeachMost() {
-        return null;
+    public void teachersWhoTeachMost() {
+
     }
 
 }
