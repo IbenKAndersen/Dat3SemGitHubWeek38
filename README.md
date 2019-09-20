@@ -3,8 +3,8 @@ Exercises for week 38
 
 # Tuesday 17/09/2019
 JPA-2 and REST-2
-- Status: Answered almost all questiones
-- Location: The NetBeans project and the document with answers are in the folder 01_tuesday_excercises. I have answered the questions and made screenshots of the different exercises from NetBeans and added them to the pdf document JPA_Relations.pdf
+- Status: I have answered almost all questiones
+- Location: The NetBeans project and the document with answers are in the folder 01_tuesday_excercises. I have answered the questions and made screenshots of the different exercises from NetBeans and added them to the pdf document JPA_Relations_answers.pdf
 - Learning goals: demonstrating the use of EntityManager, EntityManagerFactory and Persistence.xml, demonstrating CRUD-operations, implementing code with simple relations between JPA entities, knowing the difference between unidirectional and bidirectional relations. 
 
 # Wednesday 18/09/2019 and Thursday 19/09/2019
