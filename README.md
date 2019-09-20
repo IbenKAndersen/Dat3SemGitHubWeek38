@@ -15,6 +15,6 @@ JPQL, REST, Error Handling with REST and JSON
 
 # Friday 20/09/2019
 JPQL and JPA
-- Status: I have tried to make most of the exercises in ExamPrep_JPA and ExamPrep_JPQL
+- Status: I have tried to make the exercises in ExamPrep_JPA and ExamPrep_JPQL
 - Location: The NetBeans projects and pdf documents with answers are in the folder 03_friday_excercises
 - Learning goals: demonstrating knowledge about JPA and JPQL and being able to explain its functionalities. 
