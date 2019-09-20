@@ -11,4 +11,9 @@ public class StudentInfo {
     public String classNameThisSemester;
     public String classDescription;
 
+    public StudentInfo() {
+    }
+    
+    
+
 }

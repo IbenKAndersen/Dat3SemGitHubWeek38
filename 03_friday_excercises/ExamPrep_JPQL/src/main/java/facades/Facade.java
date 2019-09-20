@@ -119,8 +119,15 @@ public class Facade {
     }
 
     //Exercise C10
-    public void teachersWhoTeachMost() {
-
+    public List<Student> teachersWhoTeachMost() {
+        EntityManager em = emf.createEntityManager();
+        try {
+            List<Student> teachers = em.createQuery("SELECT t FROM Teacher t WHERE t.id = (SELECT max(s.id) FROM Teacher t JOIN t.semesterCollection s)").getResultList();
+            return teachers;
+        } finally {
+            em.close();
+        }
     }
+
 
 }
