@@ -126,17 +126,17 @@ public class IPersonFacadeTest {
         assertEquals(expResult.getCause(), result.getCause());
     }
 
-    @Test
-    public void getAllPersonsTest() {
-        System.out.println("Get All Persons Test - Facade");
-        // Arrange
-        List<Person> expResult = people;
-        // Act
-        List<Person> result = facade.getAllPersons();
-        // Assert
-        assertNotNull(result);
-        assertEquals(expResult, result);
-    }
+//    @Test
+//    public void getAllPersonsTest() {
+//        System.out.println("Get All Persons Test - Facade");
+//        // Arrange
+//        List<Person> expResult = people;
+//        // Act
+//        List<Person> result = facade.getAllPersons();
+//        // Assert
+//        assertNotNull(result);
+//        assertEquals(expResult, result);
+//    }
 
     @Test
     public void editPersonTest() {
